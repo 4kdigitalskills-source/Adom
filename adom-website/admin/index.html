@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-GH"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>ADOM Lead Dashboard (private)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css"></head>
+<body>
+<section id="login" class="login-wrap">
+  <form id="loginForm" class="login-card" autocomplete="on">
+    <img src="/assets/adom-logo-from-reference.jpg" alt="ADOM" width="240" height="66">
+    <h1>Private lead dashboard</h1>
+    <p class="hint">Authorised administrators only.</p>
+    <label for="email">Email</label><input id="email" type="email" autocomplete="username" required>
+    <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required>
+    <label for="code">6-digit code <span class="hint">(only if two-step sign-in is turned on)</span></label><input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6">
+    <button class="btn" type="submit">Sign in</button>
+    <p id="loginMsg" class="msg" role="alert"></p>
+  </form>
+</section>
+<div id="app" hidden></div>
+<script src="/admin/login.js" defer></script>
+</body></html>

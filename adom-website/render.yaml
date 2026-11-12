@@ -1,0 +1,43 @@
+# Render Blueprint: Render reads this file and creates the web service for you.
+# Secret values are never stored in this file; Render asks you for them (sync: false) or generates them.
+services:
+  - type: web
+    name: adom-website
+    runtime: node
+    plan: starter            # always-on. Change to "free" only for testing (free services sleep after 15 minutes idle)
+    buildCommand: echo "no build step"
+    startCommand: node server/index.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.0
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "true"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: SITE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: MAIL_FROM
+        sync: false
+      - key: LEAD_PARTNER_NAME
+        sync: false
+      - key: LEAD_PARTNER_EMAIL
+        sync: false
+      - key: LEAD_PARTNER_PHONE
+        sync: false
+      - key: COMMISSION_RATE_PERCENT
+        sync: false
+      - key: REFERRAL_AGREEMENT_CONFIRMED
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
